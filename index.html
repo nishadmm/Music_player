@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="main.css">
+  <title>Audio player</title>
+</head>
+
+<body>
+  <div class="main">
+    <div id="logo"><i class="fa fa-music" aria-hidden="true"></i>music</div>
+
+    <!-- Left part -->
+    <div class="left">
+      <img id="track-image">
+      <div class="volume">
+        <p id="volume-show">90</p>
+        <i class="fa fa-volume-up" aria-hidden="true" id="volume-icon" onclick="mute_sound()"></i>
+        <input type="range" min="0" max="100" value="90" id="volume" onchange="volume_change()">
+      </div>
+    </div>
+
+    <!-- Right part -->
+    <div class="right">
+      <div class="show_song_no">
+        <p id="present"></p>
+        <p>/</p>
+        <p id="total"></p>
+      </div>
+
+      <!-- song title -->
+      <p id="title">title.mp3</p>
+      <p id="artist">Artist name</p>
+
+      <!-- Middle part -->
+      <div class="middle">
+        <button onclick="previous_song()" id="pre"> <i class="fa fa-step-backward" aria-hidden="true"></i></button>
+        <button onclick="justplay()" id="play"> <i class="fa fa-play" aria-hidden="true"></i></button>
+        <button onclick="next_song()" id="next"> <i class="fa fa-step-forward" aria-hidden="true"></i></button>
+      </div>
+
+      <!-- song duration part -->
+      <div class="duration">
+        <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+      </div>
+      <button id="auto" onclick="autoplay_switch()">Auto play <i class="fa fa-circle-o-notch"
+          aria-hidden="true"></i></button>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
